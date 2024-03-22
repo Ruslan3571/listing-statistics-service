@@ -1,0 +1,25 @@
+version: "3.9"
+networks:
+  listing-statistics-service:
+services:
+  db:
+    image: mariadb
+    container_name: mariadb
+    environment:
+      MARIADB_ALLOW_EMPTY_ROOT_PASSWORD: 1
+    volumes:
+      - ./sql:/docker-entrypoint-initdb.d
+    ports:
+      - "3306:3306"
+    networks:
+      - listing-statistics-service
+
+  st:
+    build: .
+    image: statistics
+    container_name: statistics
+    ports:
+      - "5555:80"
+    networks:
+      - listing-statistics-service
+    entrypoint: node index.js

@@ -1,0 +1,23 @@
+{
+  "name": "listing-statistics-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node index.js"
+  },
+  "author": "Ruslan Formanchuk",
+  "license": "ISC",
+  "dependencies": {
+    "config": "^3.3.11",
+    "koa": "^2.15.1",
+    "koa-body": "^4.2.0",
+    "koa-router": "^12.0.1",
+    "mysql2": "^3.9.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^6.3.4"
+  }
+}
